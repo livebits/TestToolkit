@@ -1,0 +1,26 @@
+.Weather {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px; */
+}
+
+.Weather input {
+    width: 250px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.Weather button {
+    /* width: 150px; */
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
