@@ -5,7 +5,9 @@ type WeatherDetailProps = {
 
 const WeatherDetail = ({weather}: WeatherDetailProps) => {
     return (
-        <div>Temp: {weather.temp}°C</div>
+        <div className="WeatherDetail">
+            Temp: {weather.temp}°C
+        </div>
     )
 }
 
