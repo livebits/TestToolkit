@@ -3,8 +3,8 @@ import Weather from "../components/Weather"
 const Home = () => {
 
     return (
-        <div>
-            <h3>Home page</h3>
+        <div className="Home">
+            <h3>Get city weather</h3>
             <Weather />
         </div>
     )
