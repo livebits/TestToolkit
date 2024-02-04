@@ -26,3 +26,14 @@
 .sidebar li {
     margin-bottom: 10px;
 }
+
+/* red button */
+.logout {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}

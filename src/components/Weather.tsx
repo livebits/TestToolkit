@@ -7,7 +7,6 @@ import useGetWeather from "../hooks/useGetWeather"
 const Weather = () => {
     const [city, setCity] = useState<string>('')
     const [weather, loading, error, getWeather] = useGetWeather(city)
-console.log(error);
 
     return (
         <>
