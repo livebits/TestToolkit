@@ -11,14 +11,16 @@ const useGetWeather = (city: string) => {
         try {
             const data = await FetchWeather(city)
             setWeather(data);
+            setError(null);
             setLoading(false);
         } catch (error) {
+            setWeather(null);
             setError(error);
             setLoading(false);
         }
     };
 
-    return [ weather, loading, error, getWeather ];
+    return [weather, loading, error, getWeather];
 }
 
 export default useGetWeather;

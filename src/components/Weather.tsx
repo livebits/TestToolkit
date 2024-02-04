@@ -10,14 +10,14 @@ const Weather = () => {
 
     return (
         <>
-            <div className="Weather">
+            <div className="weather">
                 <SearchBar city={city} setCity={setCity} />
                 <button onClick={() => getWeather()} disabled={loading}>
                     {loading ? 'Loading...' : 'Get Weather'}
                 </button>
             </div>
             {weather && <WeatherDetail weather={weather} />}
-            {error && <div className="error">{error}</div>}
+            {error && <div className="error">{error.message}</div>}
         </>
     )
 
