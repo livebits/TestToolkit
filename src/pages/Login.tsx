@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'; // import useHistory
 import { SubmitHandler, useForm } from "react-hook-form";
 import "../styles/Login.css"
-import useAuth from '../hooks/useAuth';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 
 interface LoginForm {
     username: string,
@@ -11,15 +12,15 @@ interface LoginForm {
 const Login = () => {
     const { register, handleSubmit, setError, formState: { errors } } = useForm<LoginForm>();
     const navigate = useNavigate();
-    const {login} = useAuth();
+    const { login } = useContext(AuthContext)
 
     const onSubmit: SubmitHandler<LoginForm> = (data) => {
         login(data.username, data.password)
-        .then(() => {
-            navigate('/');
-        }).catch((error) => {
-            setError('root.serverError', { message: error });
-        })
+            .then(() => {
+                navigate('/');
+            }).catch((error) => {
+                setError('root.serverError', { message: error });
+            })
     }
 
     return (
@@ -31,7 +32,7 @@ const Login = () => {
             <label>Password:</label>
             <input {...register('password', { required: true, minLength: 5 })} type="password" placeholder="password" />
             {errors.password && <span className="error">Password is required</span>}
-            
+
             <button type="submit">Login</button>
             {errors.root && <span className="error">{errors.root.serverError.message}</span>}
         </form>

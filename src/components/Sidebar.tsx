@@ -1,9 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import '../styles/Sidebar.css';
-import useAuth from "../hooks/useAuth";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Sidebar = () => {
-    const { logout } = useAuth();
+    const { token, logout } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const logoutUser = () => {
@@ -16,7 +17,7 @@ const Sidebar = () => {
             <div className="sidebar__header">
                 <h2>Menu</h2>
                 {
-                    localStorage.getItem('token') && <button className="logout" onClick={() => logoutUser()}>Logout</button>
+                    token && <button className="logout" onClick={() => logoutUser()}>Logout</button>
                 }
             </div>
             <div className="sidebar__content">

@@ -5,7 +5,7 @@ type SearchBarProps = {
     setCity: (city: string) => void
 }
 
-const SearchBar = ({city, setCity}: SearchBarProps) => {
+const SearchBar: React.FC<SearchBarProps> = ({city, setCity}) => {
     return (
         <input type="text" value={city} onChange={e => setCity(e.target.value)} />
     )
