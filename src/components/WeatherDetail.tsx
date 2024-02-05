@@ -3,7 +3,7 @@ type WeatherDetailProps = {
     weather: any
 }
 
-const WeatherDetail = ({weather}: WeatherDetailProps) => {
+const WeatherDetail: React.FC<WeatherDetailProps> = ({weather}) => {
     return (
         <div className="WeatherDetail">
             Temp: {weather.temp}°C

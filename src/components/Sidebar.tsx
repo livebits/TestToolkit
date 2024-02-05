@@ -3,7 +3,7 @@ import '../styles/Sidebar.css';
 import { useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
     const { token, logout } = useContext(AuthContext);
     const navigate = useNavigate();
 

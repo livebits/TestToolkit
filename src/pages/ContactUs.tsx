@@ -2,7 +2,7 @@ const ContactPage = () => {
   return (
     <div>
       <h1>Contact Page</h1>
-      <p>Contact us at weatherapp@example.com.</p>
+      <p>Welcome to our Contact Us page!</p>
     </div>
   );
 };

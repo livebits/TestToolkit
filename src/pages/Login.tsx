@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'; // import useHistory
 import { SubmitHandler, useForm } from "react-hook-form";
 import "../styles/Login.css"
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 
 interface LoginForm {
@@ -13,6 +13,12 @@ const Login = () => {
     const { register, handleSubmit, setError, formState: { errors } } = useForm<LoginForm>();
     const navigate = useNavigate();
     const { login } = useContext(AuthContext)
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            navigate('/');
+        }
+    }, [])
 
     const onSubmit: SubmitHandler<LoginForm> = (data) => {
         login(data.username, data.password)
