@@ -1,6 +1,6 @@
 
 // define component props definition
-type SearchBarProps = {
+interface SearchBarProps {
     city: string,
     setCity: (city: string) => void
 }
