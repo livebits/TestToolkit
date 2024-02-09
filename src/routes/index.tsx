@@ -5,6 +5,7 @@ import NotFound from "../pages/404";
 import Login from "../pages/Login";
 import PrivateRoute from "../components/PrivateRoute";
 import ContactPage from "../pages/ContactUs";
+import Speech from "../pages/Speech";
 
 const AppRoutes = () => {
 
@@ -14,6 +15,11 @@ const AppRoutes = () => {
             <Route path="/" element={
                 <PrivateRoute>
                     <Home />
+                </PrivateRoute>
+            } />
+            <Route path="/speech" element={
+                <PrivateRoute>
+                    <Speech />   
                 </PrivateRoute>
             } />
             <Route path="/about" element={
