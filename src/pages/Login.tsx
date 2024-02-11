@@ -18,7 +18,7 @@ const Login = () => {
         if (localStorage.getItem('token')) {
             navigate('/');
         }
-    }, [])
+    }, [navigate])
 
     const onSubmit: SubmitHandler<LoginForm> = (data) => {
         login(data.username, data.password)

@@ -22,6 +22,7 @@ const Weather = () => {
 
     useEffect(() => {
         debouncedSearchCity(city)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [city])
 
     return (
